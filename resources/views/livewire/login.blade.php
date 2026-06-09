@@ -150,6 +150,31 @@
 
 
         </form>
+
+        {{-- credential example for demo --}}
+        <div @click="demo = !demo" x-data="{ demo: false }"
+            class="relative flex items-center gap-2 text-sm cursor-pointer bg-primary/15 hover:bg-muted-gray/30 rounded-full px-3 py-3 transition-all duration-300 justify-center mt-4">
+            <p class="font-medium">Credential Example</p>
+            <div x-show="demo" x-cloak
+                class="bg-card absolute right-0 left-0 top-full mt-2 border border-border rounded-lg shadow-lg px-3 py-4 z-60 h-32 overflow-y-auto">
+                <div class="flex items-center gap-3 border-b pb-3 border-muted-gray"
+                    wire:click="$set('email', 'admin@admin.com'); $set('password', 'password')">
+                    <div>
+                        <p class="text-sm font-semibold">Admin</p>
+                        <p class="text-sm mt-1">email: admin@admin.com</p>
+                        <p class="text-sm">password: password</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 border-b pb-3 border-muted-gray "
+                    wire:click="$set('email', 'user@user.com'); $set('password', 'password')">
+                    <div>
+                        <p class="text-sm font-semibold">User</p>
+                        <p class="text-sm mt-1">email: user@user.com</p>
+                        <p class="text-sm">password: password</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
