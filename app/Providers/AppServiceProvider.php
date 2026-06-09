@@ -34,6 +34,9 @@ class AppServiceProvider extends ServiceProvider
             return "<?php echo formatDate($expression); ?>";
         });
 
+        if (config('app.env') === 'production' || env('APP_ENV') === 'production') {
+            URL::forceScheme('https');
+        }
         //
         // if (config('app.debug')) {
         //     Carbon::setTestNow(Carbon::now()->addDays(2));
